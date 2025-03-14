@@ -1,26 +1,456 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Kalam:wght@300;400;700&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #111111;
+  color: #e5e5e5;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Google Sans";
+  src: url("https://fonts.gstatic.com/s/googlesans/v58/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vgCIhM907w.woff2") format("woff2");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517b3aad7ef004750cf8_InterDisplay-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c70b5e21bd67697e5_InterDisplay-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c244370cf17d47780_InterDisplay-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517cb53cad1b34237713_InterDisplay-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c44d9968741671ad8_InterDisplay-Bold.woff2') format('woff2'), url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c70b5e213a67697e4_InterDisplay-ExtraBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c3883b2b4ac653db9_InterDisplay-italic.var.woff2') format('woff2'), url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c50a6d0a9feb007f2_InterDisplay-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c05fc6a83ccd6a118_InterDisplay-BoldItalic.woff2') format('woff2'), url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c93b8b7057b7b69c6_InterDisplay-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c05fc6a72b4d6a11a_InterDisplay-ExtraLightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517ca33194b425f0d4e1_InterDisplay-Regular.woff2') format('woff2'), url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517cc1634568b85dec6b_InterDisplay.var.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter Primary';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517cdd8263612f8c6794_InterDisplay-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c93b8b72a927b69c7_InterDisplay-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517cb67600dcccfea93d_InterDisplay-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517cc7ed7cf6f5955704_InterDisplay-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c7911c9491eac3d07_InterDisplay-ThinItalic.woff2') format('woff2');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c50a6d0372cb007f3_InterDisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517c50a6d0549fb007f4_InterDisplay-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay roman';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f6f517ce9be131bd4f389d9_InterDisplay-roman.var.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Iawriterduospace';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/604eae5a0851a7f37b71e940_iAWriterDuospace-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lausanne';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f98791d91ad722552f7c76f_font1.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Tobias';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f98791de8a6561f70a46a34_font2.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Iawriterduos';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/604eadf350708c02f949fdae_iAWriterDuoS-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Robotomono';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5ff21cb762e74a0945bdfe42_RobotoMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Robotomono';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5ff21eedc8595f2517b9b1f3_RobotoMono-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Iawriterquattros';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/604eab9c3855210cdb42ed65_iAWriterQuattroS-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Iawriterquattros';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/604eab9ce9f5d304b26cdecb_iAWriterQuattroS-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Iawriterquattros';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/604eab9c66d1efbde70665d5_iAWriterQuattroS-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Iawriterquattros';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/604eab9c2582aa8094eca235_iAWriterQuattroS-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sf ui display 58646e9b26e8b';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5e8cdc61379d476a8f886f86_sf-ui-display-thin-58646e9b26e8b.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'Sf ui display 58646b19bf205';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5e8cdc62379d47049d886f87_sf-ui-display-ultralight-58646b19bf205.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'Sf ui display 58646a511e3d9';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5e8cdc61fb24740fc181b3f2_sf-ui-display-bold-58646a511e3d9.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'Sf ui display 586470160b9e5';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5e8cdc6180d6a09b7effb90e_sf-ui-display-heavy-586470160b9e5.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'Sf ui display 58646b33e0551';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5e8cdc616e230e1936058aca_sf-ui-display-light-58646b33e0551.otf') format('opentype'), url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5e8cdc616e230e1936058aca_sf-ui-display-light-58646b33e0551.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'Sf ui display 58646be638f96';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5e8cdc61379d4722d6886f82_sf-ui-display-medium-58646be638f96.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'Sf ui display 58646eddcae92';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5e8cdc6180d6a02f52ffb90f_sf-ui-display-semibold-58646eddcae92.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'Ogg roman';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5eb0f319c8c08b2b8c3b3291_Ogg-Roman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'Ogg';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5ee2708e9ad59655a8f5ccaa_Ogg-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f2ec7316730a42c8c8f2680_Inter-Light.otf') format('opentype'), url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f2ec7316730a42c8c8f2680_Inter-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f764733c9966bf55d07ec3f_Inter-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f76473381e9411299cc3281_Inter-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f7647332974054ccff1f8e6_Inter-Bold.otf') format('opentype'), url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f76473300985b8aabc26aca_Inter-ExtraBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f764733914c437fca1f51a3_Inter-Italic.otf') format('opentype'), url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f76473411553a137d63a28b_Inter-italic.var.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f76473281e9413cefcc3280_Inter-ExtraBoldItalic.otf') format('opentype'), url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f764733514577cbaf28137a_Inter-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f7647336ecafcca9678c4db_Inter-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f764733297405830af1f8f1_Inter-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f764733c9966b85e507ec40_Inter-Regular.otf') format('opentype'), url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f764734c23d4217eaa8ee1e_Inter.var.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f7647329c67b6ab2e43a687_Inter-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f7647335e0ee4031b64f478_Inter-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f764733204163477256b88d_Inter-ExtraLightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f7647331c2a4254ebfab24a_Inter-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f764733c23d4211eea8ee1d_Inter-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f7647332529770fd36bada0_Inter-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f7647342529771c2a6bada1_Inter-ThinItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter roman';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f7647348bc02cb2bd875f77_Inter-roman.var.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Interdisplay';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/5f764984ae022e00bc5c505f_InterDisplay-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Iawriterduospace';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/60181b73313ff5c7910e5a9a_iAWriterDuospace-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Iawriterduospace';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/60181b73a1d01e3ad1bc48be_iAWriterDuospace-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gt pressura';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/611b711f36fc84685a21465f_GT%20Pressura%20Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gt pressura';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/611b711f901484ea7ab86df2_GT%20Pressura%20Bold%20Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gt pressura';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/611b711fa96dadbbbb4e0446_GT%20Pressura%20Regular%20Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gt pressura';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/611b711f54a59a2aed650423_GT%20Pressura%20Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gt pressura';
+  src: url('https://cdn.prod.website-files.com/5e88a75bf99d7ccf3c6d4094/611b711ff13dfb03383558a7_GT%20Pressura%20Light%20Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+a {
+  color: inherit;
+  text-decoration: none;
 }
+
+@font-face {
+  font-family: 'Newsreader';
+  src: url('https://fonts.gstatic.com/s/newsreader/v20/cY9VfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBAbNJYQ5ayZC.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+                                                                             
